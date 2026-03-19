@@ -47,9 +47,9 @@ class ChemBERTaFeaturizer(MolecularFeaturizer):
         Name of the pre-trained ChemBERTa model from Hugging Face Hub.
         Supported models:
         - "seyonec/ChemBERTa-zinc-base-v1" (default, 768 dim)
-        - "seyonec/PubChem10M_SMILES_BPE_396_250" (256 dim)
-        - "DeepChem/ChemBERTa-77M-MLM" (768 dim)
-        - "DeepChem/ChemBERTa-77M-MTR" (768 dim)
+        - "seyonec/PubChem10M_SMILES_BPE_396_250" (768 dim)
+        - "DeepChem/ChemBERTa-77M-MLM" (384 dim)
+        - "DeepChem/ChemBERTa-77M-MTR" (384 dim)
     pooling : str, default "mean"
         Pooling strategy to generate molecule-level embeddings from token embeddings.
         Options: "mean", "cls"
