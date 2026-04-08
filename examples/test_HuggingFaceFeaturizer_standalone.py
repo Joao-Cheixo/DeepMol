@@ -18,9 +18,9 @@ except ImportError:
     logger.warning("Transformers not available.")
 
 
-class ChemBERTaFeaturizer:
+class HuggingFaceFeaturizer:
     """
-    ChemBERTa featurizer that works with torch 2.5.1 using SafeTensors
+    HuggingFaceFeaturizer that works with torch 2.5.1 using SafeTensors
     """
     
     def __init__(self, 
@@ -29,7 +29,7 @@ class ChemBERTaFeaturizer:
                  max_length: int = 512):
         
         if not _transformers_available:
-            raise ImportError("Transformers and torch are required for ChemBERTaFeaturizer")
+            raise ImportError("Transformers and torch are required for HuggingFaceFeaturizer")
         
         self.model_name = model_name
         self.pooling = pooling
@@ -136,7 +136,7 @@ class ChemBERTaFeaturizer:
 
 # Test the featurizer
 if __name__ == "__main__":
-    print(" Testing ChemBERTa Featurizer with Torch 2.5.1...")
+    print(" Testing HuggingFaceFeaturizer with Torch 2.5.1...")
     print("=" * 50)
     
     # Test molecules
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     ]
     
     try:
-        featurizer = ChemBERTaFeaturizer()
+        featurizer = HuggingFaceFeaturizer()
         
         print(f"\n Testing {len(test_smiles)} molecules:")
         print("=" * 50)

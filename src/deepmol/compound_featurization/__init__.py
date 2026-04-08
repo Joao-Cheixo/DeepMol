@@ -42,4 +42,4 @@ from .mhfp import MHFP
 
 from .biosynfoni import BiosynfoniKeys
 
-from .chemberta_featurizer import ChemBERTaFeaturizer
+from .huggingface_featurizer import HuggingFaceFeaturizer

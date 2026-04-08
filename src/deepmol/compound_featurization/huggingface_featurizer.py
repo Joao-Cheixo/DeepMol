@@ -26,12 +26,12 @@ def _get_model_cache_key(model_name: str, pooling: str) -> str:
     """Generate cache key for model instances."""
     return f"{model_name}_{pooling}"
 
-class ChemBERTaFeaturizer(MolecularFeaturizer):
+class HuggingFaceFeaturizer(MolecularFeaturizer):
     """
-    ChemBERTa featurizer that generates molecular embeddings using pre-trained
-    ChemBERTa models from Hugging Face Transformers.
+    HuggingFace featurizer that generates molecular embeddings using pre-trained
+    Hugging Face models.
     
-    ChemBERTa is a transformer model pre-trained on large-scale molecular 
+    HuggingFace models are transformer models pre-trained on large-scale molecular 
     datasets using SMILES strings, adapting NLP techniques to chemistry.
     
     Features:
@@ -75,7 +75,7 @@ class ChemBERTaFeaturizer(MolecularFeaturizer):
         
         if not _transformers_available:
             raise ImportError(
-                "ChemBERTaFeaturizer requires transformers and torch to be installed. "
+                "HuggingFaceFeaturizer requires transformers and torch to be installed. "
                 "Please install them using: pip install transformers torch"
             )
         
@@ -100,7 +100,7 @@ class ChemBERTaFeaturizer(MolecularFeaturizer):
         self.feature_names = None
         self._initialize_feature_names()
         
-        logger.info(f"Initialized ChemBERTaFeaturizer with model: {model_name}, "
+        logger.info(f"Initialized HuggingFaceFeaturizer with model: {model_name}, "
                    f"device: {self.device}, pooling: {pooling}")
     
     def _initialize_model(self):
